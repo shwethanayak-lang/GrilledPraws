@@ -1,0 +1,496 @@
+@import url("https://fonts.googleapis.com/css2?family=Carrois+Gothic&display=swap");
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+body {
+  background-color: #f6f6f6;
+  width: 1220px;
+  margin: 10px 20px;
+}
+
+.header {
+  margin: 20px 0;
+}
+
+.header__navbar li {
+  list-style: none;
+  display: inline;
+  width: 1240px;
+  height: 100px;
+  padding-top: 60px;
+  font-family: Roboto;
+  font-size: 16px;
+  text-align: left;
+  left: 66px;
+  margin-left: 30px;
+  font-weight: 400;
+}
+
+.header__navbar--logo {
+  color: #de1738;
+  margin-right: 190px;
+  padding-left: 50px;
+}
+
+.header__navbar--logo img {
+  /* width: 50px;
+  height: 50px;
+  bottom: -4%;
+  position: absolute;
+  padding: 10px 6px;
+  background: #ff0000;
+  margin-top: 20px;
+  display: block;
+  top: -10px;
+  left: 19px; */
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  left: 2.5rem;
+  top: -10px;
+  /* top: 1rem; */
+}
+.header__poster {
+  margin-bottom: 2px;
+  width: 1040px;
+  height: 456px;
+}
+
+.header__poster--picture img {
+  float: left;
+  height: 456px;
+  width: 1240px;
+  display: block;
+  position: relative;
+}
+.header__poster--info {
+  color: #fff;
+  background-color: #de1738;
+  padding-left: 5px;
+  width: 350px;
+  height: 459px;
+  position: absolute;
+  float: right;
+  top: 37px;
+  right: 0px;
+}
+.header__poster--info h2 {
+  font-family: Open Sans;
+  font-size: 40px;
+  width: 239px;
+  height: 173px;
+  font-weight: 700;
+  margin: 5px 30px;
+  text-align: left;
+}
+.header__poster--info p {
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 400;
+  text-align: left;
+  width: 346px;
+  padding: 25px;
+  height: 111px;
+  text-align: left;
+}
+.header__poster--info button {
+  padding: 10px;
+  margin-top: 55px;
+  width: 169px;
+  height: 53px;
+}
+
+.filterrecipe {
+  margin: 5px 0;
+  padding: 50px;
+}
+.filterrecipe__type {
+  display: flex;
+  color: #fff;
+  background-color: #de1738;
+  padding: 40px;
+}
+.filterrecipe__type--one,
+.filterrecipe__type--two,
+.filterrecipe__type--three,
+.filterrecipe__type--four {
+  display: flex;
+  flex-direction: column;
+  margin: 0 50px;
+}
+.filterrecipe__type--three,
+.filterrecipe__type--four {
+  padding-top: 34px;
+}
+.filterrecipe__type span {
+  padding: 5px;
+}
+
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 18px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active,
+.collapsible:hover {
+  background-color: #555;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+
+#label {
+  font-size: 20px;
+  padding-left: 2px;
+}
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #fff;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #fff;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid #000;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.filterrecipe__sort {
+  display: flex;
+  flex-direction: row;
+  margin-top: 55px;
+}
+.filterrecipe__sort--one {
+  background-color: #de1738;
+  width: 300px;
+  color: #fff;
+  height: 50px;
+  font: Roboto;
+  weight: 700;
+  padding: 10px;
+  font-size: 18px;
+}
+.filterrecipe__sort--one span {
+  float: right;
+}
+.filterrecipe__sort--two select {
+  width: 100px;
+  height: 21px;
+}
+.filterrecipe__sort--two {
+  width: 270px;
+  height: 50px;
+  padding-left: 43px;
+  font: Roboto;
+  weight: 400;
+  font-size: 18px;
+}
+.filterrecipe__sort--three {
+  padding-left: 500px;
+  font-weight: bold;
+  font-size: 18px;
+  color: #4a4a4a;
+  border: none;
+}
+.filterrecipe__sort--three i {
+  left: -4px;
+}
+.itemlist__one,
+.itemlist__two,
+.itemlist__three,
+.itemlist__four,
+.itemlist__five,
+.itemlist__six,
+.itemlist__seven,
+.itemlist__eight,
+.itemlist__nine,
+.itemlist__ten,
+.itemlist__eleven,
+.itemlist__twelve {
+  background: #fff;
+  width: 340px;
+  height: auto;
+  margin: 10px 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+input {
+  color: #000;
+  background-color: #fff;
+}
+
+.vertical {
+  left: 23.35%;
+  right: 76.65%;
+  top: 9.78%;
+  bottom: 80.33%;
+  border: 1px solid #ffffff;
+}
+
+.itemlist {
+  margin: 31px 50px;
+  height: auto;
+  width: auto;
+  margin-bottom: 48px;
+  display: grid;
+  grid-template-columns: 200px 200px 200px 200px;
+  left: 5px;
+  top: 515px;
+  margin-left: 100px;
+}
+
+.itemlist img {
+  width: 288px;
+  height: 250px;
+}
+#info span {
+  padding-left: 40px;
+}
+#tored {
+  color: #de1738;
+  font-weight: 500;
+  margin-left: 27px;
+}
+
+#info {
+  font-weight: 500;
+  font-size: 12px;
+  margin: 15px 30px;
+  width: 200px;
+  margin-left: 1px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 5px 10px;
+}
+
+#head {
+  padding-top: 2px;
+  color: #4a4a4a;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 25px;
+  width: 250px;
+  height: 130px;
+  margin-left: 10px;
+}
+.signup {
+  color: #fff;
+  background-color: #e9474b;
+  width: 1040px;
+  margin: auto;
+  padding: 10px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.signup p {
+  width: 420px;
+  padding: 10px;
+}
+.signup__form--one {
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+  border-bottom: 1px solid #fff;
+  padding-bottom: 20px;
+}
+
+.signup__form--one p {
+  width: 200px;
+}
+.signup__form--one input {
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+.addbutton {
+  /* width: 200px;
+  height: 50px; */
+  left: -30px;
+  margin-top: 45px;
+  padding: 4px 35px;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 10%;
+}
+
+.buttonsend {
+  margin: 0 480px;
+  padding: 5px 25px;
+  background-color: #fff;
+}
+
+.footer {
+  margin: 5px 0;
+  height: auto;
+  padding: 30px 100px;
+  width: 1240px;
+  display: grid;
+  left: 0;
+  grid-template-columns: 200px 200px 200px 200px 200px;
+  margin: 10px;
+}
+
+.footer-red {
+  color: #de1738;
+}
+.footer h4 {
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 23px;
+  letter-spacing: 0.25999999046325684px;
+  text-align: left;
+  padding-bottom: 20px;
+  width: 300px;
+}
+.footer p {
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 21px;
+  letter-spacing: 0.23399999737739563px;
+  text-align: left;
+  padding: 5px 3px;
+}
+.footer div {
+  padding: 10px 15px;
+  margin: 0 15px;
+  margin-left: 10px;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  body {
+    width: 500px;
+  }
+  .header__poster {
+    display: flex;
+    flex-direction: column;
+  }
+  .header__poster--picture {
+    height: 200px;
+    width: auto;
+    margin-bottom: 200px;
+  }
+  .header__poster--info {
+    height: 300px;
+    width: auto;
+  }
+  .header__navbar li {
+    font-size: 26px;
+    padding: 5px;
+  }
+  .header__navbar--logo {
+    margin-right: 15px;
+    bottom: -14%;
+  }
+  .itemlist {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .signup__form--one div {
+    display: flex;
+    flex-direction: column;
+  }
+  .footer {
+    display: flex;
+    flex-direction: column;
+  }
+  .footer div {
+    /* padding: 30px 15px; */
+    border-bottom: 1px solid #696969;
+    height: auto;
+    width: 450px;
+  }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 640px) {
+  .itemlist {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+  .footer {
+    display: flex;
+    flex-direction: column;
+  }
+  .footer div {
+    padding: 30px 15px;
+    border-bottom: 1px solid #696969;
+  }
+}
+@media only screen and (min-width: 640px) {
+}
