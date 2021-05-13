@@ -1,362 +1,73 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Grilled Prawn</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <link rel="stylesheet" href="grilledPrawn.css" />
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-  </head>
-  <body>
-    <script src="grilledPrawn.js"></script>
+const test = () => {
+  var x = document.getElementById("type");
+  if (x.style.display === "none") {
+    x.style.display = "flex";
+    document.getElementById("symbol").innerHTML = "-";
+  } else {
+    x.style.display = "none";
+    document.getElementById("symbol").innerHTML = "+";
+  }
+};
 
+let i;
+let id = 0;
+let Name = document.getElementById("name"),
+  Surname = document.getElementById("surname"),
+  Email = document.getElementById("email"),
+  user = document.getElementById("user");
 
+onFormSubmit = () => {
+  let formData = readFormData();
+  insertNewRecord(formData);
+};
 
-    <div class="header">
-      
-      <div class="header__navbar">
-        <ul>
-          <li class="header__navbar--logo">
-            <img src="./images/logo.png"/>
-            <span>  The Grilled Prawn    </span>  
-              
-          </li>
-         <li>RECIPES</li>
-          <li>DRINKS</li>
-          <li>DECORATIONS</li>
-          <li>ABOUT THE GRILLED PRAWNS</li>
-        </ul>
-      </div>
+readFormData = () => {
+  let formData = {
+    name: Name.value,
+    surname: Surname.value,
+    email: email.value,
+  };
+  return formData;
+};
 
-      <div class="header__poster">
-        <div class="header__poster--picture">
-          <img
-            src="./images/baked.jpg"
-          />
-        </div>
-        <div class="header__poster--info">
-          <h3>LATEST RECIPE</h3>
-          <h2>Baked Polenta with Cheese and Mushrooms.</h2>
-          <p>
-            Polenta, goat cheese, Italian sausage, and cremini mushrooms. All
-            together this make for pretty darn good side dish to a lovely
-            salad.Go for it.
-          </p>
-          <button>Go to recipe <i class="fas fa-arrow-right"></i></button>
-        </div>
-      </div>
-    </div>
+const insertNewRecord = (data) => {
+  let parent = document.createElement("ul");
+  parent.className = "user";
+  let listOne = document.createElement("li");
+  listOne.innerHTML = `<label for="name">Name</label> <br>`;
+  let inputOne = document.createElement("input");
+  inputOne.setAttribute("type", "text");
+  inputOne.setAttribute("value", data.name);
+  listOne.appendChild(inputOne);
+  parent.appendChild(listOne);
 
-    <div class="filterrecipe">
+  let listTwo = document.createElement("li");
+  listTwo.innerHTML = `<label for="name">SurName</label> <br>`;
+  let inputTwo = document.createElement("input");
+  inputTwo.setAttribute("type", "text");
+  inputTwo.setAttribute("value", data.surname);
+  listTwo.appendChild(inputTwo);
+  parent.appendChild(listTwo);
 
-      <h1>Our Recipes</h1>
+  let listThree = document.createElement("li");
+  listThree.innerHTML = `<label for="email">Email</label> <br>`;
+  let inputThree = document.createElement("input");
+  inputThree.setAttribute("type", "email");
+  inputThree.setAttribute("value", data.email);
+  listThree.appendChild(inputThree);
+  parent.appendChild(listThree);
 
-      <div class="filterrecipe__sort">
- <div class="filterrecipe__sort--one">
- 
+  let listFour = document.createElement("li");
+  listFour.innerHTML = `<span class="icon"><i class="fa fa-trash"></i>Remove</span>`;
+  listFour.setAttribute("id", "newsLetter" + id++);
+  listFour.setAttribute("onClick", "deleteRow(this.id)");
+  parent.appendChild(listFour);
+  user.appendChild(parent);
+  user.className = "signup__form";
+};
 
-  <button class="accordian" >Filter recipes by<span class="accordianafter" id="symbol" onclick="test()" >-</span></button>
-</div> 
-   
-<div class="filterrecipe__sort--two">Sort by 
-  <select >
-    <option >Newest first</option>
-      <option>Select</option>
-  </select>
-</div>
-<div class="filterrecipe__sort--three"><input type="text" placeholder="Search recipe"><i class="fas fa-search"></i></input></div>
-      </div>
-
-    
-    <div class="filterrecipe__type" id="type">
-
-      <div class="filterrecipe__type--one">
-
-
-<label class="container" id="label">Food Type:
-
-</label>
-<label class="container">Appetisers
-  <input type="checkbox" >
-  <span class="checkmark"></span>
-</label>
-<label class="container">Mains
-  <input type="checkbox" checked="checked">
-  <span class="checkmark"></span>
-</label>
-<label class="container">Desserts
-  <input type="checkbox" >
-  <span class="checkmark"></span>
-</label>
-<label class="container">Special Occasions
-  <input type="checkbox" >
-  <span class="checkmark"></span>
-</label>
-      </div>
-
-      <div class="vertical"></div>
-
-        <div class="filterrecipe__type--two">
-<label class="container" id="label" >Nationality:
- 
-</label>
-<label class="container">Italian(34)
-  <input type="checkbox" >
-  <span class="checkmark"></span>
-</label>
-<label class="container">French(30)
-  <input type="checkbox" checked="checked">
-  <span class="checkmark"></span>
-</label>
-<label class="container">Spanish(22)
-  <input type="checkbox" checked="checked">
-  <span class="checkmark"></span>
-</label>
-<label class="container">Peruvian(3)
-  <input type="checkbox" >
-  <span class="checkmark"></span>
-</label>
-        </div>
- <div class="filterrecipe__type--three">
-          
-            <label class="container">Chinese(18)
-  <input type="checkbox" >
-  <span class="checkmark"></span>
-</label>
-<label class="container">Indian(13)
-</span>
-  <input type="checkbox" >
-  <span class="checkmark"></span>
-</label>
-<label class="container">Thai(10)
-  <input type="checkbox" checked="checked">
-  <span class="checkmark"></span>
-</label>
-<label class="container">Norwegian(4)
-  <input type="checkbox">
-  <span class="checkmark"></span>
-</label>
-          </div>
-            <div class="filterrecipe__type--four">
-              <label class="container">Polish(2)
-                <input type="checkbox" >
-                <span class="checkmark"></span>
-              </label>
-              <label class="container">Danish(3)
-                <input type="checkbox" checked="checked">
-                <span class="checkmark"></span>
-              </label>
-              <label class="container">Belgian(7)
-                <input type="checkbox" >
-                <span class="checkmark"></span>
-              </label>
-              <label class="container">Persian(13)
-                <input type="checkbox" >
-                <span class="checkmark"></span>
-              </label>
-            
-            </div>
-    </div>
-
-
-
-    
-    
-    </div>
-
-    <div class="itemlist">
-      <div class="itemlist__one">
-        <div class="itemlist__one--info" id="info">
-          <li>5TH MARCH 2016</li>
-          <li>THAI</li>
-         
-        </div>
-        <div class="itemlist__one--head" id="head">Thai Yellow Curry Noodles with Shiitake Mushrooms</div>
-        <img
-          src="./images/recipe1.png" 
-        />
-      </div>
-
-        <div class="itemlist__two">
-          <div class="itemlist__two--info" id="info">
-            <li>17TH MARCH 2016</li>
-            <li>ITALIAN</li>
-          </div>
-          <div class="itemlist__two--head" id="head">Cappellini with Cherry Tomatoes and Fresh Basil</div>
-          <img src="./images/recipe2.png"  />
-        </div>
-
-        <div class="itemlist__three">
-          <div class="itemlist__three--info" id="info">
-            <li>4TH APRIL 2016</li>
-            <li>ITALIAN</li>
-          </div>
-          <div class="itemlist__three--head" id="head">
-          Baked Turkey Sausage and Mascarpone Stuffed Shells
-          </div>
-          <img src="./images/recipe3.png"  />
-        </div>
-
-        <div class="itemlist__four">
-          <div class="itemlist__four--info" id="info">
-            <li>24TH MAY 2016</li>
-            <li>ITALIAN</li>
-          </div>
-          <div class="itemlist__four--head" id="head">
-            Caramelised Apple and Herb Fiocchi
-          </div>
-          <img src="./images/recipe4.png"  />
-        </div>
-          <div class="itemlist__five">
-          <div class="itemlist__five--info" id="info">
-            <li>25TH MAY 2016</li>
-            <li>SPANISH</li>
-          </div>
-          <div class="itemlist__five--head" id="head">Pumpkin Beer Cheese Soup</div>
-          <img
-            src="./images/recipe5.png" 
-          />
-        </div>
-          <div class="itemlist__six">
-            <div class="itemlist__six--info" id="info">
-              <li>24TH MAY 2018</li>
-              <li>ITALIAN</li>
-            </div>
-            <div class="itemlist__six--head" id="head">Yum Woon Sen with Shrimp (Glass noodle salad with Shrimp)</div>
-            <img src="./images/recipe6.png"  />
-          </div>
-            <div class="itemlist__seven">
-              <div class="itemlist__seven--info" id="info">
-                <li>14TH OCTOBER 2016</li>
-                <li>THAI</li>
-              </div>
-              <div class="itemlist__seven--head" id="head">Beef Satay</div>
-              <img src="./images/recipe7.png" />
-            </div>
-              <div class="itemlist__eight">
-                <div class="itemlist__eight--info" id="info">
-                  <li>29TH OCTOBER 2016</li>
-                  <li>FRENCH</li>
-                </div>
-                <div class="itemlist__eight--head"id="head">Creamy French Onion Soup Dip in a Bread Bowl</div>
-                <img src="./images/recipe8.png"  />
-              </div>
-                <div class="itemlist__nine">
-          <div class="itemlist__nine--info" id="info">
-            <li>11TH NOVEMBER 2016</li>
-            <li>SPANISH</li>
-          </div>
-          <div class="itemlist__nine--head" id="head">Bocadillo Bites</div>
-          <img
-            src="./images/recipe9.png" 
-          />
-        </div>
-          <div class="itemlist__ten">
-            <div class="itemlist__ten--info" id="info">
-              <li>12TH NOVEMBER 2016</li>
-              <li>SPANISH</li>
-            </div>
-            <div class="itemlist__ten--head" id="head">Paella</div>
-            <img src="./images/recipe10.png" />
-          </div>
-            <div class="itemlist__eleven">
-              <div class="itemlist__eleven--info" id="info">
-                <li>24TH DECEMBER 2016</li>
-                <li>THAI</li>
-              </div>
-              <div class="itemlist__eleven--head" id="head">Spicy black Bean Burger</div>
-              <img src="./images/recipe11.png" />
-            </div>
-              <div class="itemlist__twelve">
-                <div class="itemlist__twelve--info" id="info">
-                  <li>9TH JANUARY 2017</li>
-                  <li>ITALIAN</li>
-                </div>
-                <div class="itemlist__twelve--head" id="head">Fresh Fig and Pistachio Salad</div>
-                <img src="./images/recipe12.png"  />
-              </div>
-             
-    </div>
-     <div id="tored">Return to top ^</div>
-
-
-
-  <div class="signup">
-      <h1>Spread the word!</h1>
-      <p>
-        Our recipes are awesome, signup to our newsletter and invite friends to
-        join the Grilled Prawn cult
-      </p>
-
-      <div class="user"></div>
-    <form autocomplete="off" onsubmit="event.preventDefault();onFormSubmit();">
-       <div class="signup__form"  >
-      <ul>
-      <div>
-        <li>
-        <p>Name</p>
-        <input type="text" id="name" placeholder="George" />
-        </li>
-      </div>
-      <div>
-        <li>
-        <p>Surname</p>
-        <input type="text"  id="surname" placeholder="Stone" />
-        </li>
-      </div>
-      <div>
-        <li>
-        <p>Email address</p>
-        <input type="email" id="email" placeholder="george.stone@gmail.com" />
-        </li>
-      </div>
- 
-        <div><li><button type="button"  class="addbutton" ><span>Add Friend</span></button> </li></div>
-</ul>
-      </div> 
-    </div>
-      </form>
-<div> <button type="button"  class="buttonsend"><span>Send</span> <i class="fas fa-arrow-right"></i></button></div>
-    </div>   
-      
-
-    <div class="footer">
-      <div >
-        <h4>Our Recipes</h4>
-        <p>All our recipes are tested thoroughly by us to make sure they're suitable for
-        your kitchen at home. we know many of you are concerned about healthy eating
-        , so we send them to a qualified nutritionist for thorough analysis too.
-          <p class="footer-red">Browse our recipes now</p>
-        </p>
-      </div>
-      <div>
-        <h4><span>Grilled Prawn's History</span></h4>
-        <p>
-          The Grilled Prawn is a fictional food blog created in January 2015.
-        </p>
-      </div>
-      <div><h4>Tips and Tricks</h4>
-        <p>Not sure how to do something?
-          Don't panic.We have plenty of tutorials for you.
-        </p>
-        <p class="footer-red"> Learn more</p></div>
-
-      <div><h4>Help and Contact </h4>
-      <p>Struggling with one of the recipes?
-<p class="footer-red">Send us an email</p>
-      </p>
-      <p>We are always happy to try new things, send us your suggestions!</p>
-      <p class="footer-red">Fill in the form</p>
-      </div>
-      <div>
-        <p><i class="far fa-copyright"></i>The Grilled Prawn</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing 
-          elit. Sed imperdiet, lectus quis interdum viverra, erat mi  consectetur mi, a fringilla odio 
-        risus vel augue. Mauris tempor ligula fringilla magna iaculis, non vulputate tellus interdum.
-      The images and recipes idea were taken from spoonforkbacon.com and the icons from Google Material
-      </p>
-      </div>
-    </div>
-  </body>
-</html>
+function deleteRow(id) {
+  parentElement = document.getElementById(id).parentNode;
+  console.log(parentElement);
+  parentElement.remove();
+}
