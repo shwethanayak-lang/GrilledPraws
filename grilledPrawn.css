@@ -7,7 +7,7 @@
 }
 body {
   background-color: #f6f6f6;
-  width: 1220px;
+  width: 1200px;
   margin: 10px 20px;
 }
 
@@ -20,7 +20,7 @@ body {
   display: inline;
   width: 1240px;
   height: 100px;
-  padding-top: 60px;
+  margin-top: 80px;
   font-family: Roboto;
   font-size: 16px;
   text-align: left;
@@ -32,26 +32,15 @@ body {
 .header__navbar--logo {
   color: #de1738;
   margin-right: 190px;
-  padding-left: 50px;
+  padding-left: 65px;
 }
 
 .header__navbar--logo img {
-  /* width: 50px;
+  width: 50px;
   height: 50px;
-  bottom: -4%;
   position: absolute;
-  padding: 10px 6px;
-  background: #ff0000;
-  margin-top: 20px;
-  display: block;
-  top: -10px;
-  left: 19px; */
-  width: 70px;
-  height: 70px;
-  position: absolute;
-  left: 2.5rem;
-  top: -10px;
-  /* top: 1rem; */
+  left: 60px;
+  top: -5px;
 }
 .header__poster {
   margin-bottom: 2px;
@@ -62,56 +51,71 @@ body {
 .header__poster--picture img {
   float: left;
   height: 456px;
-  width: 1240px;
+  width: 1200px;
   display: block;
   position: relative;
+  z-index: -1;
 }
 .header__poster--info {
   color: #fff;
   background-color: #de1738;
   padding-left: 5px;
   width: 350px;
-  height: 459px;
+  height: 457px;
   position: absolute;
   float: right;
   top: 37px;
   right: 0px;
+  padding-left: 27px;
 }
+.header__poster--info h3 {
+  margin-bottom: 2px;
+}
+
 .header__poster--info h2 {
-  font-family: Open Sans;
-  font-size: 40px;
-  width: 239px;
-  height: 173px;
+  font-size: 35px;
+  font-family: "Open Sans", sans-serif;
+  margin: 5px 0px;
+  line-height: 54.47px;
+  letter-spacing: 1.5px;
   font-weight: 700;
-  margin: 5px 30px;
-  text-align: left;
+  margin-top: 1px;
 }
-.header__poster--info p {
-  font-family: Roboto;
-  font-size: 18px;
+.header__poster--info p,
+.header__poster--info h3 {
+  font-family: "Roboto", sans-serif;
+  font-size: 17px;
   font-weight: 400;
-  text-align: left;
-  width: 346px;
-  padding: 25px;
-  height: 111px;
-  text-align: left;
+  line-height: 28px;
+  letter-spacing: 0.5px;
+  margin: 5px 0px 30px 0px;
 }
 .header__poster--info button {
-  padding: 10px;
-  margin-top: 55px;
-  width: 169px;
-  height: 53px;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  line-height: 21px;
+  color: #4a4a4a;
+  padding: 12px 10px;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  font-weight: 700;
+  cursor: pointer;
+  background-color: #ffffff;
 }
 
 .filterrecipe {
-  margin: 5px 0;
+  margin: 2px;
   padding: 50px;
 }
 .filterrecipe__type {
   display: flex;
   color: #fff;
   background-color: #de1738;
-  padding: 40px;
+  /* padding: 20px; */
+  margin-bottom: 0px;
+  overflow: hidden;
+  padding: 0px;
 }
 .filterrecipe__type--one,
 .filterrecipe__type--two,
@@ -129,33 +133,20 @@ body {
   padding: 5px;
 }
 
+input [type="checkbox"] {
+  cursor: pointer;
+}
 .container {
   display: block;
   position: relative;
   padding-left: 35px;
   margin-bottom: 12px;
-  cursor: pointer;
+
   font-size: 18px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-}
-.collapsible {
-  background-color: #777;
-  color: white;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-}
-
-.active,
-.collapsible:hover {
-  background-color: #555;
 }
 
 .content {
@@ -228,6 +219,31 @@ body {
   flex-direction: row;
   margin-top: 55px;
 }
+
+.accordian {
+  border: none;
+  color: #fff;
+  background-color: #de1738;
+  cursor: pointer;
+  background-color: #de1738;
+  color: #fff;
+  font: Roboto;
+  weight: 700;
+  font-size: 18px;
+  border: none;
+  position: absolute;
+}
+.accordianafter:hover {
+  transform: scale(1.05);
+}
+.accordianafter {
+  position: relative;
+  right: -50px;
+  top: -4px;
+  /* transform: scale(1.05); */
+  font-size: 20px;
+  padding-right: 2px;
+}
 .filterrecipe__sort--one {
   background-color: #de1738;
   width: 300px;
@@ -235,8 +251,9 @@ body {
   height: 50px;
   font: Roboto;
   weight: 700;
-  padding: 10px;
+  padding: 20px;
   font-size: 18px;
+  border: none;
 }
 .filterrecipe__sort--one span {
   float: right;
@@ -246,13 +263,24 @@ body {
   height: 21px;
 }
 .filterrecipe__sort--two {
-  width: 270px;
+  width: 290px;
   height: 50px;
   padding-left: 43px;
   font: Roboto;
   weight: 400;
   font-size: 18px;
 }
+/* /* .filterrecipe__sort--three i {
+  right: 180px;
+  margin-top: 10px;
+  background-color: #fff;
+}
+.filterrecipe__sort--three input {
+  /* z-index: -1;
+  border: none;
+  padding: 10px;
+  right: 170px; */
+
 .filterrecipe__sort--three {
   padding-left: 500px;
   font-weight: bold;
@@ -276,12 +304,11 @@ body {
 .itemlist__eleven,
 .itemlist__twelve {
   background: #fff;
-  width: 340px;
-  height: auto;
-  margin: 10px 25px;
+  width: 240px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  margin: 30px 2px;
 }
 input {
   color: #000;
@@ -295,111 +322,147 @@ input {
   bottom: 80.33%;
   border: 1px solid #ffffff;
 }
+.itemlist div:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px -10px #000;
+}
 
 .itemlist {
-  margin: 31px 50px;
-  height: auto;
-  width: auto;
-  margin-bottom: 48px;
-  display: grid;
-  grid-template-columns: 200px 200px 200px 200px;
-  left: 5px;
-  top: 515px;
-  margin-left: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-flow: wrap;
+  margin: 10px 80px;
+  margin-bottom: 5px;
+  width: 1040px;
 }
 
 .itemlist img {
-  width: 288px;
-  height: 250px;
+  width: 240px;
+  height: 210px;
 }
 #info span {
   padding-left: 40px;
 }
 #tored {
   color: #de1738;
-  font-weight: 500;
-  margin-left: 27px;
+  font-weight: 600;
+  padding-left: 93px;
+  margin-top: 5px;
 }
 
-#info {
+#info li {
   font-weight: 500;
   font-size: 12px;
-  margin: 15px 30px;
-  width: 200px;
-  margin-left: 1px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  padding: 5px 10px;
+  width: 240px;
+  margin-left: 0px;
+  display: inline;
+  padding: 10px 20px;
+  list-style: none;
 }
 
 #head {
-  padding-top: 2px;
+  text-align: left;
   color: #4a4a4a;
   font-family: Roboto;
-  font-style: normal;
   font-weight: 300;
+  padding: 20px 4px;
   font-size: 25px;
-  width: 250px;
-  height: 130px;
-  margin-left: 10px;
 }
 .signup {
   color: #fff;
   background-color: #e9474b;
   width: 1040px;
   margin: auto;
-  padding: 10px;
   height: auto;
+  padding: 10px;
   margin-bottom: 20px;
+  margin-top: 20px;
+  overflow: auto;
+  min-height: 450px;
 }
 
-.signup p {
-  width: 420px;
+.signup p,
+.signup h1 {
+  margin-left: 20px;
+  width: 400px;
   padding: 10px;
 }
-.signup__form--one {
+
+.signup__form ul {
+  list-style: none;
   display: flex;
   flex-direction: row;
-  margin: 10px;
-  border-bottom: 1px solid #fff;
-  padding-bottom: 20px;
 }
 
-.signup__form--one p {
+.signup__form--one,
+.signup__form {
+  margin: 20px;
+  padding-bottom: 30px;
+  display: flex;
+  flex-direction: row;
+  height: auto;
+}
+
+.signup__form {
+  border-bottom: 1px solid #fff;
+}
+.signup__form--one p,
+.signup__form p {
   width: 200px;
 }
-.signup__form--one input {
-  padding: 10px;
+.signup__form--one input,
+.signup__form input {
+  padding: 10px 15px;
   border-radius: 5px;
   margin-top: 10px;
+  margin-right: 70px;
+}
+.remove i {
+  margin-right: 10px;
+}
+.remove {
+  margin-top: 60px;
 }
 .addbutton {
-  /* width: 200px;
-  height: 50px; */
-  left: -30px;
-  margin-top: 45px;
-  padding: 4px 35px;
+  left: 30px;
+  margin-top: 47px;
+  padding: 10px 45px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fff;
+  background-color: #e9474b;
+  border: 1px solid #fff;
+}
+
+.addbutton:hover {
   background-color: #fff;
-  padding: 10px;
-  border-radius: 10%;
+  color: #000;
 }
 
 .buttonsend {
-  margin: 0 480px;
-  padding: 5px 25px;
+  border-radius: 5px;
+  margin: -80px 480px;
+  padding: 10px 35px;
   background-color: #fff;
+  cursor: pointer;
+  margin-left: 52px;
+  align-content: center;
+  float: right;
 }
 
 .footer {
   margin: 5px 0;
   height: auto;
   padding: 30px 100px;
-  width: 1240px;
   display: grid;
   left: 0;
   grid-template-columns: 200px 200px 200px 200px 200px;
-  margin: 10px;
+  margin: 5px;
+}
+
+.footer span {
+  padding-left: -2px;
 }
 
 .footer-red {
@@ -410,8 +473,6 @@ input {
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
-  line-height: 23px;
-  letter-spacing: 0.25999999046325684px;
   text-align: left;
   padding-bottom: 20px;
   width: 300px;
@@ -421,51 +482,126 @@ input {
   font-size: 18px;
   font-style: normal;
   font-weight: 300;
-  line-height: 21px;
-  letter-spacing: 0.23399999737739563px;
   text-align: left;
   padding: 5px 3px;
 }
 .footer div {
-  padding: 10px 15px;
+  padding: 10px 9px;
   margin: 0 15px;
-  margin-left: 10px;
+  margin-left: 5px;
+}
+
+@media only screen and (max-width: 320px) {
+  .header__poster--info {
+    width: auto;
+    padding-left: 20px;
+    height: auto;
+  }
+  .header__poster--picture {
+    height: auto;
+  }
 }
 
 @media only screen and (min-width: 320px) and (max-width: 480px) {
   body {
-    width: 500px;
+    width: auto;
+  }
+
+  .header__navbar li {
+    list-style: none;
+    display: block;
+    height: 10px;
+    margin-top: 80px;
+    font-family: Roboto;
+    font-size: 16px;
+    text-align: left;
+    font-weight: 400;
+    padding: 1px;
   }
   .header__poster {
-    display: flex;
-    flex-direction: column;
+    padding-top: 40px;
   }
+
   .header__poster--picture {
     height: 200px;
     width: auto;
     margin-bottom: 200px;
+    top: 10px;
+    position: relative;
+    z-index: -1;
   }
   .header__poster--info {
-    height: 300px;
-    width: auto;
+    position: absolute;
+    right: -700px;
+    top: 1px;
+    width: 500px;
+    bottom: 0;
   }
-  .header__navbar li {
-    font-size: 26px;
-    padding: 5px;
-  }
+
   .header__navbar--logo {
     margin-right: 15px;
     bottom: -14%;
   }
+  .accordianafter:hover {
+    transform: scale(1.05);
+  }
+  .filterrecipe__type {
+    margin-bottom: 0px;
+    display: flex;
+    overflow: hidden;
+    padding: 0px;
+  }
+  .filterrecipe__sort,
+  .filterrecipe__type {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 5px;
+  }
+  .filterrecipe__sort {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+  .filterrecipe__sort--one {
+    padding: auto 2px;
+    margin-bottom: 0;
+    padding-right: 0;
+  }
+  .filterrecipe__sort--two {
+    margin-left: 450px;
+  }
+  .filterrecipe__sort--three {
+    margin-right: 450px;
+  }
   .itemlist {
     display: flex;
     flex-direction: column;
+    float: center;
   }
-
-  .signup__form--one div {
+  .buttonsend {
+    margin-left: 5px;
+  }
+  .signup__form ul {
     display: flex;
     flex-direction: column;
   }
+  .signup {
+    height: auto;
+    margin-bottom: 10px;
+  }
+  .signup__form,
+  .signup__form--one {
+    display: flex;
+    flex-direction: column;
+  }
+  .signup input {
+    padding: 20px 10px;
+  }
+  .signup {
+    height: auto;
+    padding: 0 20px;
+  }
+
   .footer {
     display: flex;
     flex-direction: column;
@@ -479,9 +615,24 @@ input {
 }
 
 @media only screen and (min-width: 480px) and (max-width: 640px) {
+  .header__poster {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .header__poster--info {
+    width: auto;
+  }
+
+  .filterrecipe__type {
+    margin-bottom: 0px;
+    display: flex;
+    overflow: hidden;
+  }
+
   .itemlist {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto auto auto;
   }
   .footer {
     display: flex;
@@ -491,6 +642,4 @@ input {
     padding: 30px 15px;
     border-bottom: 1px solid #696969;
   }
-}
-@media only screen and (min-width: 640px) {
 }
