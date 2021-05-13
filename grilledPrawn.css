@@ -270,16 +270,6 @@ input [type="checkbox"] {
   weight: 400;
   font-size: 18px;
 }
-/* /* .filterrecipe__sort--three i {
-  right: 180px;
-  margin-top: 10px;
-  background-color: #fff;
-}
-.filterrecipe__sort--three input {
-  /* z-index: -1;
-  border: none;
-  padding: 10px;
-  right: 170px; */
 
 .filterrecipe__sort--three {
   padding-left: 500px;
@@ -418,12 +408,7 @@ input {
   margin-top: 10px;
   margin-right: 70px;
 }
-.remove i {
-  margin-right: 10px;
-}
-.remove {
-  margin-top: 60px;
-}
+
 .addbutton {
   left: 30px;
   margin-top: 47px;
