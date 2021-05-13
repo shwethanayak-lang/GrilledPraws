@@ -3,7 +3,7 @@
   <head>
     <title>Grilled Prawn</title>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <link rel="stylesheet" href="grilledPrawn.css" />
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
       integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
@@ -19,7 +19,8 @@
         <ul>
           <li class="header__navbar--logo">
             <img src="./images/logo.png"/>
-              The Grilled Prawn 
+            <span>  The Grilled Prawn    </span>  
+              
           </li>
          <li>RECIPES</li>
           <li>DRINKS</li>
@@ -35,14 +36,14 @@
           />
         </div>
         <div class="header__poster--info">
-          <p>LATEST RECIPE</p>
-          <h1>Baked Polenta with Cheese and Mushrooms.</h1>
+          <h3>LATEST RECIPE</h3>
+          <h2>Baked Polenta with Cheese and Mushrooms.</h2>
           <p>
             Polenta, goat cheese, Italian sausage, and cremini mushrooms. All
             together this make for pretty darn good side dish to a lovely
             salad.Go for it.
           </p>
-          <button>Go to recipe</button>
+          <button>Go to recipe <i class="fas fa-arrow-right"></i></button>
         </div>
       </div>
     </div>
@@ -52,8 +53,12 @@
       <h1>Our Recipes</h1>
 
       <div class="filterrecipe__sort">
-<div class="filterrecipe__sort--one">Filter recipes by<span >-</span></div>
+ <div class="filterrecipe__sort--one">
+ 
 
+  <button class="accordian" >Filter recipes by<span class="accordianafter" id="symbol" onclick="test()" >-</span></button>
+</div> 
+   
 <div class="filterrecipe__sort--two">Sort by 
   <select >
     <option >Newest first</option>
@@ -64,7 +69,7 @@
       </div>
 
     
-    <div class="filterrecipe__type">
+    <div class="filterrecipe__type" id="type">
 
       <div class="filterrecipe__type--one">
 
@@ -113,7 +118,7 @@
   <span class="checkmark"></span>
 </label>
         </div>
-          <div class="filterrecipe__type--three">
+ <div class="filterrecipe__type--three">
           
             <label class="container">Chinese(18)
   <input type="checkbox" >
@@ -153,13 +158,18 @@
             
             </div>
     </div>
+
+
+
+    
     
     </div>
 
     <div class="itemlist">
       <div class="itemlist__one">
         <div class="itemlist__one--info" id="info">
-          <p>5TH MARCH 2016<span>THAI</span></p>
+          <li>5TH MARCH 2016</li>
+          <li>THAI</li>
          
         </div>
         <div class="itemlist__one--head" id="head">Thai Yellow Curry Noodles with Shiitake Mushrooms</div>
@@ -170,8 +180,8 @@
 
         <div class="itemlist__two">
           <div class="itemlist__two--info" id="info">
-            <p>17TH MARCH 2016</p>
-            <p>ITALIAN</p>
+            <li>17TH MARCH 2016</li>
+            <li>ITALIAN</li>
           </div>
           <div class="itemlist__two--head" id="head">Cappellini with Cherry Tomatoes and Fresh Basil</div>
           <img src="./images/recipe2.png"  />
@@ -179,8 +189,8 @@
 
         <div class="itemlist__three">
           <div class="itemlist__three--info" id="info">
-            <p>4TH APRIL 2016</p>
-            <p>ITALIAN</p>
+            <li>4TH APRIL 2016</li>
+            <li>ITALIAN</li>
           </div>
           <div class="itemlist__three--head" id="head">
           Baked Turkey Sausage and Mascarpone Stuffed Shells
@@ -190,8 +200,8 @@
 
         <div class="itemlist__four">
           <div class="itemlist__four--info" id="info">
-            <p>24TH MAY 2016</p>
-            <p>ITALIAN</p>
+            <li>24TH MAY 2016</li>
+            <li>ITALIAN</li>
           </div>
           <div class="itemlist__four--head" id="head">
             Caramelised Apple and Herb Fiocchi
@@ -200,8 +210,8 @@
         </div>
           <div class="itemlist__five">
           <div class="itemlist__five--info" id="info">
-            <p>25TH MAY 2016</p>
-            <p>SPANISH</p>
+            <li>25TH MAY 2016</li>
+            <li>SPANISH</li>
           </div>
           <div class="itemlist__five--head" id="head">Pumpkin Beer Cheese Soup</div>
           <img
@@ -210,32 +220,32 @@
         </div>
           <div class="itemlist__six">
             <div class="itemlist__six--info" id="info">
-              <p>24TH MAY 2018</p>
-              <p>ITALIAN</p>
+              <li>24TH MAY 2018</li>
+              <li>ITALIAN</li>
             </div>
             <div class="itemlist__six--head" id="head">Yum Woon Sen with Shrimp (Glass noodle salad with Shrimp)</div>
             <img src="./images/recipe6.png"  />
           </div>
             <div class="itemlist__seven">
               <div class="itemlist__seven--info" id="info">
-                <p>14TH OCTOBER 2016</p>
-                <p>THAI</p>
+                <li>14TH OCTOBER 2016</li>
+                <li>THAI</li>
               </div>
               <div class="itemlist__seven--head" id="head">Beef Satay</div>
               <img src="./images/recipe7.png" />
             </div>
               <div class="itemlist__eight">
                 <div class="itemlist__eight--info" id="info">
-                  <p>29TH OCTOBER 2016</p>
-                  <p>FRENCH</p>
+                  <li>29TH OCTOBER 2016</li>
+                  <li>FRENCH</li>
                 </div>
                 <div class="itemlist__eight--head"id="head">Creamy French Onion Soup Dip in a Bread Bowl</div>
                 <img src="./images/recipe8.png"  />
               </div>
                 <div class="itemlist__nine">
           <div class="itemlist__nine--info" id="info">
-            <p>11TH NOVEMBER 2016</p>
-            <p>SPANISH</p>
+            <li>11TH NOVEMBER 2016</li>
+            <li>SPANISH</li>
           </div>
           <div class="itemlist__nine--head" id="head">Bocadillo Bites</div>
           <img
@@ -244,71 +254,84 @@
         </div>
           <div class="itemlist__ten">
             <div class="itemlist__ten--info" id="info">
-              <p>12TH NOVEMBER 2016</p>
-              <p>SPANISH</p>
+              <li>12TH NOVEMBER 2016</li>
+              <li>SPANISH</li>
             </div>
             <div class="itemlist__ten--head" id="head">Paella</div>
             <img src="./images/recipe10.png" />
           </div>
             <div class="itemlist__eleven">
               <div class="itemlist__eleven--info" id="info">
-                <p>24TH DECEMBER 2016</p>
-                <p>THAI</p>
+                <li>24TH DECEMBER 2016</li>
+                <li>THAI</li>
               </div>
               <div class="itemlist__eleven--head" id="head">Spicy black Bean Burger</div>
               <img src="./images/recipe11.png" />
             </div>
               <div class="itemlist__twelve">
                 <div class="itemlist__twelve--info" id="info">
-                  <p>9TH JANUARY 2017</p>
-                  <p>ITALIAN</p>
+                  <li>9TH JANUARY 2017</li>
+                  <li>ITALIAN</li>
                 </div>
                 <div class="itemlist__twelve--head" id="head">Fresh Fig and Pistachio Salad</div>
                 <img src="./images/recipe12.png"  />
               </div>
-              <div id="tored">Return to top ^</div>
+             
     </div>
+     <div id="tored">Return to top ^</div>
 
-    <div class="signup">
+
+
+  <div class="signup">
       <h1>Spread the word!</h1>
       <p>
         Our recipes are awesome, signup to our newsletter and invite friends to
         join the Grilled Prawn cult
       </p>
+
+      <div class="user"></div>
+    <form autocomplete="off" onsubmit="event.preventDefault();onFormSubmit();">
+       <div class="signup__form"  >
+      <ul>
+      <div>
+        <li>
+        <p>Name</p>
+        <input type="text" id="name" placeholder="George" />
+        </li>
+      </div>
+      <div>
+        <li>
+        <p>Surname</p>
+        <input type="text"  id="surname" placeholder="Stone" />
+        </li>
+      </div>
+      <div>
+        <li>
+        <p>Email address</p>
+        <input type="email" id="email" placeholder="george.stone@gmail.com" />
+        </li>
+      </div>
+ 
+        <div><li><button type="button"  class="addbutton" ><span>Add Friend</span></button> </li></div>
+</ul>
+      </div> 
+    </div>
+      </form>
+<div> <button type="button"  class="buttonsend"><span>Send</span> <i class="fas fa-arrow-right"></i></button></div>
+    </div>   
       
 
-      <div class="signup__form--one">
-      <div>
-        <p>Name</p>
-        <input type="text" placeholder="George" />
-      </div>
-      <div>
-        <p>Surname</p>
-        <input type="text" placeholder="Stone" />
-      </div>
-      <div>
-        <p>Email address</p>
-        <input type="email" placeholder="george.stone@gmail.com" />
-      </div>
-      <div><button type="button" class="addbutton" onclick="addRow()">Add Friend</button></div>
-    </div>
-    <div class="newrow"></div>
-    <div> <button type="button" class="buttonsend">Send -></button></div>
-    </div>
-
-
     <div class="footer">
-      <div>
+      <div >
         <h4>Our Recipes</h4>
-        <p>
-          All our recipes are tested thoroughly by us to make sure they're
-          suitable for your kitchen at home. We know many of you are concerned
-          about healthy eating, so we send them to a qualified nutritionist for
-          thorough analysis too.
+        <p>All our recipes are tested thoroughly by us to make sure they're suitable for
+        your kitchen at home. we know many of you are concerned about healthy eating
+        , so we send them to a qualified nutritionist for thorough analysis too.
+          <p class="footer-red">Browse our recipes now</p>
         </p>
       </div>
       <div>
-        <h4>Grilled Prawn's History</h4>
+        <h4><span>Grilled Prawn's History</span></h4>
         <p>
           The Grilled Prawn is a fictional food blog created in January 2015.
         </p>
@@ -324,6 +347,7 @@
 <p class="footer-red">Send us an email</p>
       </p>
       <p>We are always happy to try new things, send us your suggestions!</p>
+      <p class="footer-red">Fill in the form</p>
       </div>
       <div>
         <p><i class="far fa-copyright"></i>The Grilled Prawn</p>
