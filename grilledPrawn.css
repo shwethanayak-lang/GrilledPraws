@@ -270,16 +270,7 @@ input [type="checkbox"] {
   weight: 400;
   font-size: 18px;
 }
-/* /* .filterrecipe__sort--three i {
-  right: 180px;
-  margin-top: 10px;
-  background-color: #fff;
-}
-.filterrecipe__sort--three input {
-  /* z-index: -1;
-  border: none;
-  padding: 10px;
-  right: 170px; */
+
 
 .filterrecipe__sort--three {
   padding-left: 500px;
@@ -417,13 +408,9 @@ input {
   border-radius: 5px;
   margin-top: 10px;
   margin-right: 70px;
+
 }
-.remove i {
-  margin-right: 10px;
-}
-.remove {
-  margin-top: 60px;
-}
+
 .addbutton {
   left: 30px;
   margin-top: 47px;
@@ -582,18 +569,7 @@ input {
     margin-left: 5px;
   }
   .signup__form ul {
-    display: flex;
-    flex-direction: column;
-  }
-  .signup {
-    height: auto;
-    margin-bottom: 10px;
-  }
-  .signup__form,
-  .signup__form--one {
-    display: flex;
-    flex-direction: column;
-  }
+
   .signup input {
     padding: 20px 10px;
   }
