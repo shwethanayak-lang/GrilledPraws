@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Grilled Prawn</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <link rel="stylesheet" href="grilledPrawn.css" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+</head>
+
+<body>
+    <script src="grilledPrawn.js"></script>
+
+
+
+    <div class="header">
+
+        <div class="header__navbar">
+            <ul>
+                <li class="header__navbar--logo">
+                    <img src="./images/logo.png" />
+                    <span> The Grilled Praw </span>
+
+                </li>
+                <li>RECIPES</li>
+                <li>DRINKS</li>
+                <li>DECORATIONS</li>
+                <li>ABOUT THE GRILLED PRAWNS</li>
+            </ul>
+        </div>
+
+        <div class="header__poster">
+            <div class="header__poster--picture">
+                <img src="./images/baked.jpg" />
+            </div>
+            <div class="header__poster--info">
+                <h3>LATEST RECIPE</h3>
+                <h2>Baked Polenta with Cheese and Mushrooms.</h2>
+                <p>
+                    Polenta, goat cheese, Italian sausage, and cremini mushrooms. All
+                    together this make for pretty darn good side dish to a lovely
+                    salad.Go for it.
+                </p>
+                <button>Go to recipe <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="filterrecipe">
+
+        <h1>Our Recipes</h1>
+
+        <div class="filterrecipe__sort">
+            <div class="filterrecipe__sort--one">
+
+
+                <button class="accordian">Filter recipes by<span class="accordianafter" id="symbol"
+                        onclick="test()">-</span></button>
+            </div>
+
+            <div class="filterrecipe__sort--two">Sort by
+                <select>
+                    <option>Newest first</option>
+                    <option>Select</option>
+                </select>
+            </div>
+            <div class="filterrecipe__sort--three"><input type="text" placeholder="Search recipe"><i
+                    class="fas fa-search"></i></input></div>
+        </div>
+
+
+</body>
+
+</html>
